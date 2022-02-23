@@ -30,7 +30,10 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="card">
-                    <h1> { advice } </h1>
+                    <h1 className="advice"> { advice } </h1>
+                    <button className="button">
+                        <span>GIVE ME ADVICE!</span>
+                    </button>
                 </div>
             </div>
         );
