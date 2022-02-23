@@ -31,7 +31,7 @@ class App extends Component {
             <div className="App">
                 <div className="card">
                     <h1 className="advice"> { advice } </h1>
-                    <button className="button">
+                    <button onClick={this.fetchData} className="button">
                         <span>GIVE ME ADVICE!</span>
                     </button>
                 </div>
