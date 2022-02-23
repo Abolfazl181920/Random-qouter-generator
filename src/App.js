@@ -7,6 +7,7 @@ class App extends Component {
 
     state = { advice: '' };
 
+
     componentDidMount() {
         this.fetchData();
     }
@@ -15,15 +16,23 @@ class App extends Component {
         axios.get('https://api.adviceslip.com/advice')
             .then((response) => {
                 const { advice } = response.data.slip;
-                console.log(advice);
+                this.setState({ advice });
             })
             .catch((error) => {
                 console.log(error);
             })
     }
+
     render() {
-        return(
-            <h1>App</h1>
+
+        const { advice } = this.state;
+
+        return (
+            <div className="App">
+                <div className="card">
+                    <h1> { advice } </h1>
+                </div>
+            </div>
         );
     }
 }
